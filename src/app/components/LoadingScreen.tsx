@@ -30,7 +30,7 @@ export default function LoadingScreen() {
           className="mb-8"
         >
           <img
-            src="/src/imports/WhatsApp_Image_2026-05-11_at_10.36.47_AM-removebg-preview.png"
+            src="/logo.png"
             alt="MoneyExpert Finserv"
             className="h-32 w-auto mx-auto"
           />

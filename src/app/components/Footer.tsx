@@ -67,7 +67,7 @@ export default function Footer() {
           <div>
             <div className="mb-6">
               <img
-                src="/src/imports/WhatsApp_Image_2026-05-11_at_10.36.47_AM-removebg-preview.png"
+                src="/logo.png"
                 alt="MoneyExpert Finserv Logo"
                 className="h-24 w-auto object-contain"
               />

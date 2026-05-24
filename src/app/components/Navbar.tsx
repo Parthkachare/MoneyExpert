@@ -60,7 +60,7 @@ export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
             className="flex items-center space-x-3 cursor-pointer"
           >
             <img
-              src="/src/imports/WhatsApp_Image_2026-05-11_at_10.36.47_AM-removebg-preview.png"
+              src="/logo.png"
               alt="MoneyExpert Finserv Logo"
               className="h-14 w-auto object-contain"
             />
