@@ -32,7 +32,7 @@ export default function Footer() {
       {
         name: 'Yavatmal Branch',
         head: 'Ravindra J. Kachare',
-        phone: '+91 83808 39096',
+        phone: '+91 7387390965',
       },
       {
         name: 'Amravati Branch',

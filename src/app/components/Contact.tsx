@@ -30,7 +30,7 @@ export default function Contact() {
     {
       icon: Phone,
       title: 'Call Us',
-      details: ['+91 8007897555', '+91 83808 39096'],
+      details: ['+91 8007897555', '+91 7387390965'],
       gradient: 'from-blue-600 to-blue-800',
     },
     {

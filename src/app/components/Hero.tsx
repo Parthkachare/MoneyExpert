@@ -59,7 +59,7 @@ export default function Hero() {
               className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/30 rounded-full mb-6"
             >
               <span className="text-blue-800 dark:text-blue-300 font-medium">
-                #1 Financial Services in Maharashtra
+                Trusted Financial Solutions Across Vidarbha Region
               </span>
             </motion.div>
 

@@ -68,7 +68,7 @@ export default function About() {
               <div className="relative bg-white/80 dark:bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-blue-100 dark:border-blue-800 shadow-2xl">
                 <h3 className="text-2xl font-bold mb-4">Our Story</h3>
                 <p className="text-muted-foreground mb-4 leading-relaxed">
-                  Founded by <span className="font-semibold text-foreground">Ravindra J. Kachare</span>, MoneyExpert Finserv has grown to become one of Maharashtra's most trusted financial consultancies. We specialize in loans, insurance, and investment guidance with personalized customer support.
+                  Founded by <span className="font-semibold text-foreground">Ravindra J. Kachare</span>, MoneyExpert Finserv has grown to become one of Vidarbha's most trusted financial consultancies. We specialize in loans, insurance, and investment guidance with personalized customer support.
                 </p>
                 <p className="text-muted-foreground mb-4 leading-relaxed">
                   Our team, led by <span className="font-semibold text-foreground">Parth Kachare</span> (AMFI Registered Mutual Fund Distributor certified through SEBI NISM examination), brings years of experience in helping families and businesses achieve their financial goals.
