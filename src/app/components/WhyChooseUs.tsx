@@ -25,6 +25,7 @@ export default function WhyChooseUs() {
       const targets = {
         customers: 700,
         partners: 10,
+        processing: 48,
         loansApproved: 500,
         amountDisbursed: 75,
         mutualFundAUM: 10,
