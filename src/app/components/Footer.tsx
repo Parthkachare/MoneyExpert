@@ -42,6 +42,25 @@ export default function Footer() {
     ],
   };
 
+  const moreContacts = [
+    {
+      title: 'Phone',
+      icon: Phone,
+      details: [
+        { label: '+91 8007897555', href: 'tel:+918007897555' },
+        { label: '+91 7387390965', href: 'tel:+917387390965' },
+      ],
+    },
+    {
+      title: 'Email',
+      icon: Mail,
+      details: [
+        { label: 'moneyexpert.ms@gmail.com', href: 'mailto:moneyexpert.ms@gmail.com' },
+        { label: 'moneyexpert.business@gmail.com', href: 'mailto:moneyexpert.business@gmail.com' },
+      ],
+    },
+  ];
+
   const socialLinks = [
     { icon: Facebook, href: 'https://facebook.com', color: 'hover:text-blue-600' },
     { icon: Twitter, href: 'https://twitter.com', color: 'hover:text-blue-400' },
@@ -146,6 +165,25 @@ export default function Footer() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+
+        <div className="mb-12">
+          <h4 className="font-bold mb-6 text-lg">More Contact</h4>
+          <div className="grid sm:grid-cols-2 gap-6">
+            {moreContacts.map((contact) => (
+              <div key={contact.title} className="bg-white/50 dark:bg-white/5 rounded-lg p-4 border border-blue-200 dark:border-blue-800">
+                <h5 className="font-bold mb-3">{contact.title}</h5>
+                <div className="space-y-3">
+                  {contact.details.map((detail) => (
+                    <a key={detail.href} href={detail.href} className="flex items-center space-x-2 text-sm text-blue-600 hover:underline">
+                      <contact.icon className="w-4 h-4" />
+                      <span>{detail.label}</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 

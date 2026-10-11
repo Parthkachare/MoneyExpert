@@ -13,6 +13,7 @@ export default function WhyChooseUs() {
     processing: 0,
     loansApproved: 0,
     amountDisbursed: 0,
+    mutualFundAUM: 0,
   });
 
   useEffect(() => {
@@ -25,7 +26,8 @@ export default function WhyChooseUs() {
         customers: 700,
         partners: 10,
         loansApproved: 500,
-        amountDisbursed: 50,
+        amountDisbursed: 75,
+        mutualFundAUM: 10,
       };
 
       let step = 0;
@@ -37,6 +39,7 @@ export default function WhyChooseUs() {
           processing: Math.floor((targets.processing / steps) * step),
           loansApproved: Math.floor((targets.loansApproved / steps) * step),
           amountDisbursed: Math.floor((targets.amountDisbursed / steps) * step),
+          mutualFundAUM: Math.floor((targets.mutualFundAUM / steps) * step),
         });
 
         if (step >= steps) {
@@ -181,7 +184,7 @@ export default function WhyChooseUs() {
           <h3 className="text-3xl font-bold text-center mb-8">
             Our <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">Success Stories</span>
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
@@ -199,13 +202,23 @@ export default function WhyChooseUs() {
               className="bg-gradient-to-br from-green-600 to-green-800 rounded-3xl p-8 text-white text-center shadow-2xl"
             >
               <div className="text-5xl font-bold mb-2">₹{counts.amountDisbursed}Cr+</div>
-              <div className="text-green-100">Amount Disbursed</div>
+              <div className="text-green-100">Home Loan Disbursed</div>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 1.1 }}
+              className="bg-gradient-to-br from-violet-600 to-purple-800 rounded-3xl p-8 text-white text-center shadow-2xl"
+            >
+              <div className="text-5xl font-bold mb-2">₹{counts.mutualFundAUM}Cr+</div>
+              <div className="text-violet-100">AUM in Mutual Funds</div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ delay: 1.2 }}
               className="bg-gradient-to-br from-accent to-yellow-600 rounded-3xl p-8 text-white text-center shadow-2xl"
             >
               <div className="text-5xl font-bold mb-2">98%</div>

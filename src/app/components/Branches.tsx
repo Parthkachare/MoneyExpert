@@ -11,7 +11,7 @@ export default function Branches() {
     {
       name: 'Yavatmal Branch',
       manager: 'Ravindra J. Kachare',
-      address: 'Yavatmal, Maharashtra',
+      address: 'Renuka Nagri,Behind Udyog Bhawan,Yavatmal, Maharashtra',
       phone: '+917387390965',
       phoneDisplay: '+91 7387390965',
       email: 'moneyexpert.ms@gmail.com',
@@ -19,14 +19,14 @@ export default function Branches() {
       mapUrl: 'https://maps.google.com/?q=Yavatmal,Maharashtra',
     },
     {
-      name: 'Amravati Branch',
-      manager: 'Rahul Dhale',
-      address: 'Amravati, Maharashtra',
-      phone: '+919763681558',
-      phoneDisplay: '+91 97636 81558',
+      name: 'Wardha Branch',
+      manager: 'Team MoneyExpert',
+      address: 'Wardha, Maharashtra',
+      phone: '+918007897555',
+      phoneDisplay: '+91 80078 97555',
       email: 'moneyexpert.ms@gmail.com',
       gradient: 'from-purple-600 to-purple-800',
-      mapUrl: 'https://maps.google.com/?q=Amravati,Maharashtra',
+      mapUrl: 'https://maps.google.com/?q=Wardha,Maharashtra',
     },
     {
       name: 'Nagpur Branch',
@@ -39,14 +39,34 @@ export default function Branches() {
       mapUrl: 'https://maps.google.com/?q=Nagpur,Maharashtra',
     },
     {
-      name: 'Buldhana Branch',
+      name: 'Chandrapur Branch',
       manager: 'Team MoneyExpert',
-      address: 'Buldhana, Maharashtra',
+      address: 'Chandrapur, Maharashtra',
       phone: '+918007897555',
       phoneDisplay: '+91 80078 97555',
       email: 'moneyexpert.ms@gmail.com',
       gradient: 'from-purple-600 to-purple-800',
-      mapUrl: 'https://maps.google.com/?q=Buldhana,Maharashtra',
+      mapUrl: 'https://maps.google.com/?q=Chandrapur,Maharashtra',
+    },
+    {
+      name: 'Amravati Branch',
+      manager: 'Rahul Dhale',
+      address: 'Amravati, Maharashtra',
+      phone: '+919763681558',
+      phoneDisplay: '+91 97636 81558',
+      email: 'moneyexpert.ms@gmail.com',
+      gradient: 'from-purple-600 to-purple-800',
+      mapUrl: 'https://maps.google.com/?q=Amravati,Maharashtra',
+    },
+    {
+      name: 'Washim Branch',
+      manager: 'Team MoneyExpert',
+      address: 'Washim, Maharashtra',
+      phone: '+918007897555',
+      phoneDisplay: '+91 80078 97555',
+      email: 'moneyexpert.ms@gmail.com',
+      gradient: 'from-purple-600 to-purple-800',
+      mapUrl: 'https://maps.google.com/?q=Washim,Maharashtra',
     },
     {
       name: 'Akola Branch',
@@ -58,6 +78,18 @@ export default function Branches() {
       gradient: 'from-purple-600 to-purple-800',
       mapUrl: 'https://maps.google.com/?q=Akola,Maharashtra',
     },
+    {
+      name: 'Buldhana Branch',
+      manager: 'Team MoneyExpert',
+      address: 'Buldhana, Maharashtra',
+      phone: '+918007897555',
+      phoneDisplay: '+91 80078 97555',
+      email: 'moneyexpert.ms@gmail.com',
+      gradient: 'from-purple-600 to-purple-800',
+      mapUrl: 'https://maps.google.com/?q=Buldhana,Maharashtra',
+    },
+
+    
   ];
 
   return (

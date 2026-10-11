@@ -10,9 +10,9 @@ export default function CompareLoan() {
   const loans = [
     {
       name: 'Home Loan',
-      rate: '8.5% - 9.5%',
+      rate: '7.25% - 9.50%',
       tenure: 'Up to 30 years',
-      amount: '₹25L - ₹5Cr',
+      amount: '₹5L - ₹5Cr',
       processing: '0.5% - 1%',
       features: ['Tax Benefits', 'Balance Transfer', 'Top-up Loan', 'Low Interest'],
     },

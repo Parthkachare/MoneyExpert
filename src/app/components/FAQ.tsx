@@ -11,7 +11,7 @@ export default function FAQ() {
   const faqs = [
     {
       question: 'Which banks do you work with?',
-      answer: 'We partner with over 50+ leading nationalized and private banks including SBI, HDFC, ICICI, Axis Bank, Kotak Mahindra, LIC Housing Finance, Bandhan Bank, and many more. This allows us to get you the best rates and terms for your loan requirements.',
+      answer: 'We partner with over 50+ leading nationalized and private banks including SBI, HDFC, ICICI, LIC Housing Finance, Bandhan Bank, and many more. This allows us to get you the best rates and terms for your loan requirements.',
     },
     {
       question: 'How fast is loan approval?',
@@ -35,7 +35,7 @@ export default function FAQ() {
     },
     {
       question: 'Do you charge any fees for loan consultation?',
-      answer: 'Our initial consultation is completely free. We believe in transparency, so there are no hidden charges. Any applicable processing fees are communicated upfront and are typically charged by the bank, not by us. We earn commission from banks, so our service to you comes at no extra cost.',
+      answer: 'Our initial consultation is completely free. We believe in transparency, so there are no hidden charges. Any applicable processing fees are communicated upfront and are typically charged by the bank, not by us. We earn brokerage from banks, so our service to you comes at no extra cost.',
     },
     {
       question: 'Can I get a loan with a low credit score?',
