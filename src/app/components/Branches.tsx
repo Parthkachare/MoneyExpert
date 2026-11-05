@@ -16,7 +16,7 @@ export default function Branches() {
       phoneDisplay: '+91 7387390965',
       email: 'moneyexpert.ms@gmail.com',
       gradient: 'from-blue-600 to-blue-800',
-      mapUrl: 'https://maps.google.com/?q=Yavatmal,Maharashtra',
+      mapUrl: 'https://maps.app.goo.gl/VWc6dc8rUnuuFySn9',
     },
     {
       name: 'Wardha Branch',

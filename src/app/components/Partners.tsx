@@ -181,8 +181,8 @@ export default function Partners() {
                   }}
                   className="
                     flex
-                    h-32
-                    w-56
+                    h-40
+                    w-72
                     shrink-0
                     items-center
                     justify-center
@@ -190,18 +190,18 @@ export default function Partners() {
                     border
                     border-border
                     bg-card
-                    px-5
+                    px-6
                     shadow-sm
                     transition-shadow
                     duration-300
                     hover:shadow-xl
-                    sm:h-36
-                    sm:w-64
+                    sm:h-44
+                    sm:w-80
                   "
                 >
                   <BankLogo
                     bankName={bank.name}
-                    size={190}
+                    size={220}
                   />
                 </motion.div>
               ))}

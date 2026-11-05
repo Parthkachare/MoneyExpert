@@ -15,6 +15,7 @@ import About from './components/About';
 import Services from './components/Services';
 import Partners from './components/Partners';
 import WhyChooseUs from './components/WhyChooseUs';
+import EightFourThreeRule from './components/EightFourThreeRule';
 import Branches from './components/Branches';
 import Franchise from './components/Franchise';
 import EMICalculator from './components/EMICalculator';
@@ -45,6 +46,7 @@ export default function App() {
       <Services />
       <Partners />
       <WhyChooseUs />
+      <EightFourThreeRule />
       <LoanEligibility />
       <CompareLoan />
       <Branches />

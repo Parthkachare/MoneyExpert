@@ -21,10 +21,9 @@ export default function BankLogo({
   if (!bank || failed) {
     return (
       <div
-        className={`flex items-center justify-center rounded-xl bg-muted px-4 text-sm font-semibold text-muted-foreground ${className}`}
+        className={`flex h-full w-full items-center justify-center px-4 text-center text-base font-semibold text-foreground ${className}`}
         style={{
           minWidth: size,
-          minHeight: 70,
         }}
       >
         {bankName}
@@ -34,26 +33,22 @@ export default function BankLogo({
 
   return (
     <div
-      className={`flex items-center justify-center bg-white ${className}`}
-      style={{
-        minWidth: size,
-        minHeight: 70,
-      }}
+      className={`flex h-full w-full flex-col items-center justify-center gap-3 ${className}`}
     >
-      <img
-        src={bank.logo}
-        alt={bank.alt}
-        loading="lazy"
-        decoding="async"
-        onError={() => setFailed(true)}
-        className="
-          block
-          max-h-[58px]
-          w-auto
-          max-w-[170px]
-          object-contain
-        "
-      />
+      <div className="flex h-14 w-full items-center justify-center">
+        <img
+          src={bank.logo}
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
+          onError={() => setFailed(true)}
+          className="block h-auto max-h-14 w-auto max-w-[180px] object-contain"
+        />
+      </div>
+      <span className="text-center text-sm font-semibold leading-tight text-foreground sm:text-base">
+        {bankName}
+      </span>
     </div>
   );
 }
