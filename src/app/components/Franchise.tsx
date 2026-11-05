@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { useInView } from 'motion/react';
 import { useRef, useState } from 'react';
 import { toast } from 'sonner';
+import { submitLead } from '../lib/supabase';
 import {
   Award, TrendingUp, Users, Briefcase, Target, Handshake, ArrowRight
 } from 'lucide-react';
@@ -14,15 +15,25 @@ export default function Franchise() {
     mobile: '',
     city: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.mobile || !formData.city) {
+    if (![formData.name, formData.mobile, formData.city].every((value) => value.trim())) {
       toast.error('Please fill in all fields');
       return;
     }
-    toast.success('Franchise inquiry submitted successfully! We will contact you soon.');
-    setFormData({ name: '', mobile: '', city: '' });
+    setIsSubmitting(true);
+    try {
+      await submitLead({ ...formData, request_type: 'franchise', service: 'Franchise partnership' });
+      toast.success('Franchise inquiry submitted successfully! We will contact you soon.');
+      setFormData({ name: '', mobile: '', city: '' });
+    } catch (error) {
+      toast.error('We could not submit your franchise inquiry. Please try again or call us directly.');
+      console.error('Could not submit franchise inquiry:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const benefits = [
@@ -171,11 +182,13 @@ export default function Franchise() {
                 />
                 <motion.button
                   type="submit"
+                  disabled={isSubmitting}
+                  aria-busy={isSubmitting}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="w-full bg-gradient-to-r from-accent to-yellow-600 text-white px-6 py-4 rounded-lg font-medium flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transition-all"
                 >
-                  <span>Become a Franchise Partner</span>
+                  <span>{isSubmitting ? 'Submitting…' : 'Become a Franchise Partner'}</span>
                   <ArrowRight className="w-5 h-5" />
                 </motion.button>
               </form>

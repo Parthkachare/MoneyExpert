@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { toast } from 'sonner';
 import { MessageCircle, Phone, X, Send } from 'lucide-react';
+import { submitLead } from '../lib/supabase';
 
 export default function FloatingActions() {
   const [showCallback, setShowCallback] = useState(false);
@@ -10,16 +11,26 @@ export default function FloatingActions() {
     mobile: '',
     service: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.mobile || !formData.service) {
+    if (![formData.name, formData.mobile, formData.service].every((value) => value.trim())) {
       toast.error('Please fill in all fields');
       return;
     }
-    toast.success('Callback request submitted! We will call you within 30 minutes.');
-    setFormData({ name: '', mobile: '', service: '' });
-    setShowCallback(false);
+    setIsSubmitting(true);
+    try {
+      await submitLead({ ...formData, request_type: 'callback' });
+      toast.success('Callback request submitted! We will call you within 30 minutes.');
+      setFormData({ name: '', mobile: '', service: '' });
+      setShowCallback(false);
+    } catch (error) {
+      toast.error('We could not submit your callback request. Please try again or call us directly.');
+      console.error('Could not submit callback request:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -110,12 +121,14 @@ export default function FloatingActions() {
 
               <motion.button
                 type="submit"
+                disabled={isSubmitting}
+                aria-busy={isSubmitting}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white px-4 py-3 rounded-lg font-medium flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transition-all"
               >
                 <Send className="w-4 h-4" />
-                <span>Request Callback</span>
+                <span>{isSubmitting ? 'Submitting…' : 'Request Callback'}</span>
               </motion.button>
             </form>
           </motion.div>

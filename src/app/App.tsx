@@ -34,8 +34,13 @@ import Awards from './components/Awards';
 import LiveChat from './components/LiveChat';
 import LoadingScreen from './components/LoadingScreen';
 import DownloadBrochure from './components/DownloadBrochure';
+import AdminPanel from './components/AdminPanel';
 
 export default function App() {
+  if (window.location.pathname.replace(/\/+$/, '') === '/admin') {
+    return <AdminPanel />;
+  }
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <LoadingScreen />

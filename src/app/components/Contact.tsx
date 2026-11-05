@@ -3,6 +3,7 @@ import { useInView } from 'motion/react';
 import { useRef, useState } from 'react';
 import { toast } from 'sonner';
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
+import { submitLead } from '../lib/supabase';
 
 export default function Contact() {
   const ref = useRef(null);
@@ -15,15 +16,26 @@ export default function Contact() {
     service: '',
     message: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.mobile || !formData.email || !formData.city || !formData.service) {
+    if (![formData.name, formData.mobile, formData.email, formData.city, formData.service]
+      .every((value) => value.trim())) {
       toast.error('Please fill in all required fields');
       return;
     }
-    toast.success('Your inquiry has been submitted! Our team will contact you within 2 hours.');
-    setFormData({ name: '', mobile: '', email: '', city: '', service: '', message: '' });
+    setIsSubmitting(true);
+    try {
+      await submitLead({ ...formData, request_type: 'service' });
+      toast.success('Your inquiry has been submitted! Our team will contact you within 2 hours.');
+      setFormData({ name: '', mobile: '', email: '', city: '', service: '', message: '' });
+    } catch (error) {
+      toast.error('We could not submit your inquiry. Please try again or call us directly.');
+      console.error('Could not submit service inquiry:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -179,10 +191,12 @@ export default function Contact() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   type="submit"
+                  disabled={isSubmitting}
+                  aria-busy={isSubmitting}
                   className="w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white px-6 py-4 rounded-lg font-medium flex items-center justify-center space-x-2 shadow-xl hover:shadow-2xl transition-all"
                 >
                   <Send className="w-5 h-5" />
-                  <span>Submit Inquiry</span>
+                  <span>{isSubmitting ? 'Submitting…' : 'Submit Inquiry'}</span>
                 </motion.button>
               </form>
             </div>
