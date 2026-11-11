@@ -19,36 +19,6 @@ export default function Branches() {
       mapUrl: 'https://maps.app.goo.gl/VWc6dc8rUnuuFySn9',
     },
     {
-      name: 'Wardha Branch',
-      manager: 'Team MoneyExpert',
-      address: 'Wardha, Maharashtra',
-      phone: '+918007897555',
-      phoneDisplay: '+91 80078 97555',
-      email: 'moneyexpert.ms@gmail.com',
-      gradient: 'from-purple-600 to-purple-800',
-      mapUrl: 'https://maps.google.com/?q=Wardha,Maharashtra',
-    },
-    {
-      name: 'Nagpur Branch',
-      manager: 'Team MoneyExpert',
-      address: 'Nagpur, Maharashtra',
-      phone: '+918007897555',
-      phoneDisplay: '+91 80078 97555',
-      email: 'moneyexpert.ms@gmail.com',
-      gradient: 'from-purple-600 to-purple-800',
-      mapUrl: 'https://maps.google.com/?q=Nagpur,Maharashtra',
-    },
-    {
-      name: 'Chandrapur Branch',
-      manager: 'Team MoneyExpert',
-      address: 'Chandrapur, Maharashtra',
-      phone: '+918007897555',
-      phoneDisplay: '+91 80078 97555',
-      email: 'moneyexpert.ms@gmail.com',
-      gradient: 'from-purple-600 to-purple-800',
-      mapUrl: 'https://maps.google.com/?q=Chandrapur,Maharashtra',
-    },
-    {
       name: 'Amravati Branch',
       manager: 'Rahul Dhale',
       address: 'Amravati, Maharashtra',
@@ -58,39 +28,9 @@ export default function Branches() {
       gradient: 'from-purple-600 to-purple-800',
       mapUrl: 'https://maps.google.com/?q=Amravati,Maharashtra',
     },
-    {
-      name: 'Washim Branch',
-      manager: 'Team MoneyExpert',
-      address: 'Washim, Maharashtra',
-      phone: '+918007897555',
-      phoneDisplay: '+91 80078 97555',
-      email: 'moneyexpert.ms@gmail.com',
-      gradient: 'from-purple-600 to-purple-800',
-      mapUrl: 'https://maps.google.com/?q=Washim,Maharashtra',
-    },
-    {
-      name: 'Akola Branch',
-      manager: 'Team MoneyExpert',
-      address: 'Akola, Maharashtra',
-      phone: '+918007897555',
-      phoneDisplay: '+91 80078 97555',
-      email: 'moneyexpert.ms@gmail.com',
-      gradient: 'from-purple-600 to-purple-800',
-      mapUrl: 'https://maps.google.com/?q=Akola,Maharashtra',
-    },
-    {
-      name: 'Buldhana Branch',
-      manager: 'Team MoneyExpert',
-      address: 'Buldhana, Maharashtra',
-      phone: '+918007897555',
-      phoneDisplay: '+91 80078 97555',
-      email: 'moneyexpert.ms@gmail.com',
-      gradient: 'from-purple-600 to-purple-800',
-      mapUrl: 'https://maps.google.com/?q=Buldhana,Maharashtra',
-    },
-
-    
   ];
+
+  const serviceCities = ['Wardha', 'Nagpur', 'Chandrapur', 'Washim', 'Akola', 'Buldhana'];
 
   return (
     <section id="branches" ref={ref} className="py-20 bg-gradient-to-b from-blue-50 to-white dark:from-blue-900/20 dark:to-navy">
@@ -117,6 +57,22 @@ export default function Branches() {
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             We have branches across Maharashtra to serve you better
           </p>
+
+          <div className="mt-8">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-4">
+              We also provide services in these cities
+            </p>
+            <div className="flex flex-wrap justify-center gap-3">
+              {serviceCities.map((city) => (
+                <span
+                  key={city}
+                  className="rounded-full border border-blue-200 bg-white/70 px-4 py-2 text-sm font-medium text-blue-800 shadow-sm dark:border-blue-700 dark:bg-blue-900/20 dark:text-blue-200"
+                >
+                  {city}
+                </span>
+              ))}
+            </div>
+          </div>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">
