@@ -5,19 +5,19 @@ const milestones = [
   {
     period: 'First 8 years',
     duration: '8',
-    corpus: '₹16.2 lakh',
+    corpus: '₹3.2 lakh',
     description: 'Build your investment habit and give compounding time to begin.',
   },
   {
     period: 'Next 4 years',
     duration: '4',
-    corpus: '₹32.6 lakh',
+    corpus: '₹6.4 lakh',
     description: 'Your contributions and accumulated returns work together.',
   },
   {
     period: 'Next 3 years',
     duration: '3',
-    corpus: '₹50 lakh',
+    corpus: '₹10.1 lakh',
     description: 'Staying invested can help your corpus grow further over time.',
   },
 ];
@@ -81,7 +81,7 @@ export default function EightFourThreeRule() {
         </div>
 
         <p className="mx-auto mt-8 max-w-4xl text-center text-sm leading-relaxed text-muted-foreground">
-          Illustration assumes a ₹10,000 monthly SIP and a steady 12% annualized
+          Illustration assumes a ₹2,000 monthly SIP and a steady 12% annualized
           return, with monthly compounding. Mutual fund returns are market-linked
           and not guaranteed; actual returns and investment values will vary.
         </p>
